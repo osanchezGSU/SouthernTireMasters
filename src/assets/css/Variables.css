@@ -1,0 +1,19 @@
+/* Variables */
+:root {
+  --regular-width: 400;
+  --bold-width: 700;
+
+  --dark-gray: #1F2933;
+  --gray: #616E7C;
+  --light-gray: #F5F7FA;
+  --deselectedSelect: #9AA5B1;
+
+  --light-accent: #E0FCFF;
+
+  --primary: #F02831;
+  --dark-red: #DA0B14;
+  --light-red: #F76E6E;
+  --primary-red-opactiy: hsla(357, 87%, 55%, .75);
+
+  --text-regular: 18px;
+  }

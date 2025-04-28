@@ -1,0 +1,39 @@
+@import './Variables.css';
+
+header{
+    width: 100%;
+}
+.header-top{
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    padding: 10px 50px;
+}
+.hours_of_oper{
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+}
+.hours_of_oper > div{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.active{
+    color: var(--primary);
+}
+header{
+  display: flex;
+  flex-direction: column;
+}
+.headerCard{
+    display: flex;
+    flex-direction: column;
+}
+.headerCard > .title {
+    display: flex;
+}
+.header-middle{
+    display: flex;
+    padding: 5px 50px;
+}
