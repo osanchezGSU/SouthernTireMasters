@@ -1,12 +1,77 @@
 @import './Variables.css';
-
 header{
+    width: 100vw;
+}
+
+.header-top{
+    display: none;
+}
+
+nav > a.logoAnchor{
+    grid-column: span 2;
     width: 100%;
 }
+nav > .nav{
+    display: none;
+}
+
+nav > .nav.active{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--light-gray);
+    width: 100%;
+    align-items: start;
+    padding: 10px 50px;
+    gap: 20px;
+}
+nav > a.logo {
+    grid-column: span 2;
+    width: 100%;
+    height: auto;
+}
+a.logo > img{
+    width: 100%
+}
+nav{
+    position: relative;
+    box-shadow: 2px 2px 2px hsla(0, 0%, 0%, .15);
+}
+.active > span{
+    color: var(--primary)
+}
+a.nav_drop_down_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barsIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: -2;
+}
+.dropDownContainer{
+  
+}
+
+
+
+
+/* Tablets */
+@media (min-width: 768px) {
+    /* Tablet styles here */
+
+
 .header-top{
+    justify-content: end;
+    display: flex;
+    width: 100%;
     background-color: var(--light-gray);
     color: var(--dark-gray);
-    padding: 10px 50px;
+    padding: 10px 100px;
 }
 .hours_of_oper{
     display: flex;
@@ -19,21 +84,90 @@ header{
     justify-content: center;
     align-items: center;
 }
-.active{
-    color: var(--primary);
-}
+
 header{
   display: flex;
   flex-direction: column;
 }
-.headerCard{
-    display: flex;
-    flex-direction: column;
-}
-.headerCard > .title {
-    display: flex;
-}
-.header-middle{
-    display: flex;
-    padding: 5px 50px;
-}
+
+  }
+  
+  /* Laptops */
+  @media (min-width: 1025px) {
+    /* Laptop styles here */
+    .barsIcon{
+        display: none;
+    }
+    nav > .nav{
+        display: flex;
+        grid-column: span 10;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        gap: 25px;
+        padding-left: 30px;
+  
+
+      
+    }
+    #shop_tires_dropdown, #service_dropdown{
+        display: none;
+    }
+    
+    .dropDownContainer{
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dropDownMenu{
+        /* position: absolute; */
+        top: 100%;
+        background-color: var(--gray2);
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        border-radius: 5px;
+       
+    }
+    .dropDownMenu > span{
+       padding-bottom: 50px;
+       color: var();
+       padding: 20px;
+       font-size: 32px;
+    }
+
+    .dropDownMenu > .link{
+        background-color: var(--light-gray);
+        color: var();
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+        border-bottom: solid 1px var(--gray2);
+    }
+    .dropDownMenuContainer{
+        position: absolute;
+        top: 100%;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 15px 20px hsla(0, 0%, 0%, .15);
+    }
+    .serviceDropDownContainer{
+        display: flex;
+        gap: 30px;
+        background-color: var(--gray2);
+    }
+
+    
+
+  }
+  
+  /* Desktops */
+  @media (min-width: 1441px) {
+    /* Desktop styles here */
+  }
+  
