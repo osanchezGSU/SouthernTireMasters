@@ -18,7 +18,7 @@ function DropDownWindow(props) {
 
 
     return(
-    <div className="dropDownMenu dropDownMenuContainer">
+    <div className={`dropDownMenu dropDownMenuContainer ${props.isActive ? 'active' : ''}`}>
 
         <span>Shop For Tires</span>
 
