@@ -67,7 +67,18 @@ a.nav_drop_down_link{
 .dropDownContainer.active > .dropDownMenuContainer.active {
     display: flex;
     flex-direction: column;
-
+    margin: 20px 20px;
+    padding: 0px 5px;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px hsla(0, 0%, 0%, .15);
+}
+.dropDownContainer.active > .dropDownMenuContainer.active > a.link{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: solid 1px var(--gray2);
 }
 .dropDownContainer.active > .dropDownMenuContainer{
     display: none;
@@ -78,6 +89,31 @@ a.nav_drop_down_link{
     width: 100%;
     justify-content: space-between;
 }
+.dropDownMenuContainer.active > span{
+    display: none;
+}
+.serviceDropDownContainer.active > .dropDownMenu{
+    display: flex;
+    flex-direction: column;
+  
+}
+.serviceDropDownContainer.active > .dropDownMenu > span{
+    background-color: var(--gray2);
+    font-size: 22px;
+}
+.serviceDropDownContainer.active > .dropDownMenu > *{
+    padding: 15px;
+}
+.serviceDropDownContainer.active > .dropDownMenu > a.link{
+    border-bottom: solid 1px var(--gray2);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.serviceDropDownContainer.active{
+    padding: 0 !important
+}
+
 
 
 
@@ -111,6 +147,9 @@ a.nav_drop_down_link{
 header{
   display: flex;
   flex-direction: column;
+}
+a.logo > img{
+    width: 75%
 }
 
   }
@@ -185,7 +224,9 @@ header{
         background-color: var(--gray2);
     }
 
-    
+    a.logo > img{
+        width: 100%
+    }
 
   }
   

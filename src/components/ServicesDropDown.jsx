@@ -1,20 +1,22 @@
 import React from "react";
 import links from '../assets/js/servicesLinks'
 import { IoIosArrowForward } from "react-icons/io";
+import {Link} from 'react-router-dom'
 
-function ServicesDropDown(){
+function ServicesDropDown(props){
     function createDropDown(link){
-        return (<a href="" className="link">
-            <span>{link.name}</span>
-            <IoIosArrowForward />
-        </a>
+        return (
+            <Link key={link.id} to={link.url} className="link">
+                <span>{link.name}</span>
+                <IoIosArrowForward />
+            </Link>
         )
 
     }
 
 
     return(
-    <div className="serviceDropDownContainer dropDownMenuContainer">
+    <div className={`serviceDropDownContainer dropDownMenuContainer ${props.isActive ? 'active' : ''}`}>
         <div className="dropDownMenu">
             <span>Tire Services</span>
             {links.tireServiceLinks.map(createDropDown)}

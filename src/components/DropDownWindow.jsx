@@ -2,15 +2,17 @@ import React from "react";
 import { TbDeviceIpadHorizontalUp } from "react-icons/tb";
 import shopTireLinks from '../assets/js/shopTireLinks'
 import { IoIosArrowForward } from "react-icons/io";
+import {Link} from 'react-router-dom';
 
 
 function DropDownWindow(props) {
     function createDropDown(link){
         return (
-            <a href="" className="link">
+            
+            <Link key = {link.id} className="link">
                 <span>{link.name}</span>
                 <IoIosArrowForward />
-            </a>
+            </Link>
                 
         )
 

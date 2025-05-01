@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import './assets/css/Variables.css';
 
+
 /* Reset */
 * {
   margin: 0;
@@ -24,6 +25,63 @@
 a{
   text-decoration: none;
 }
+h1{
+  font-size: 60px;
+}
+h2{
+  font-size: 36px;
+}
+h3{
+  font-size: 30px;
+}
+p{
+  font-size: 18px;
+}
+.light-weight{
+  font-weight: 300;
+}
+.regular-weight{
+  font-weight: 400;
+}
+.medium-weight{
+  font-weight: 500;
+}
+.semi-bold-weight{
+  font-weight: 600;
+}
+.bold-weight{
+  font-weight: 700;
+}
+.primary{
+  color: var(--dark-gray)
+}
+.secondary{
+  color: var(--gray)
+}
+.teritary{
+  color: var(--light-gray);
+}
+.accent{
+  color: var(--primary);
+}
+section{
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px 16px;
+  
+}
+.flex{
+  display: flex;
+}
+main{
+  height: fit-content;
+}
+.column{
+  flex-direction: column;
+}
+
 
 /* Tablets */
 @media (min-width: 768px) {
@@ -41,6 +99,12 @@ a{
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   padding: 10px 100px;
+}
+section{
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding: 10px 100px;
+
 }
 
 }

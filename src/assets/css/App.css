@@ -1,0 +1,27 @@
+@import './Variables.css';
+
+.starIcon > *{
+  color: gold
+}
+
+
+
+/* Tablets */
+@media (min-width: 768px) {
+
+  }
+  
+  /* Laptops */
+  @media (min-width: 1025px) {
+    /* Laptop styles here */
+    .app > .grid{
+      max-width: 1024px;
+    }
+
+  }
+  
+  /* Desktops */
+  @media (min-width: 1441px) {
+    /* Desktop styles here */
+  }
+  
