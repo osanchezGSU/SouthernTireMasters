@@ -1,6 +1,10 @@
 @import './Variables.css';
 header{
     width: 100vw;
+
+}
+header > * {
+    z-index: 99;
 }
 
 .header-top{

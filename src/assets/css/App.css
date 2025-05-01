@@ -4,6 +4,30 @@
   color: gold
 }
 
+.landing-hero{
+  position: relative;
+}
+
+.landing-hero > img{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+
+}
+.landing-hero-content{
+  grid-column: span 8;c
+  
+};
+.landing-hero-content > * {
+  
+}
+
+.headline > * {
+  font-size: 30px;
+}
+
 
 
 /* Tablets */
@@ -16,6 +40,9 @@
     /* Laptop styles here */
     .app > .grid{
       max-width: 1024px;
+    }
+    .headline > * {
+      font-size: 60px;
     }
 
   }

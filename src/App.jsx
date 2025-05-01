@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {useRoutes} from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './assets/css/App.css'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
