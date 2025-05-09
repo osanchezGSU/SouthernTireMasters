@@ -1,12 +1,15 @@
 const links = [
     {   id: 1,
-        name: "By Vehicle"
+        name: "By Vehicle",
+        url: "/"
     },
     {   id: 2,
-        name: "By Tire Size"
+        name: "By Tire Size",
+        url: ""
     },
     {   id: 3,
-        name: "By License Plate"
+        name: "By License Plate",
+        url: ""
     }
 ]
 

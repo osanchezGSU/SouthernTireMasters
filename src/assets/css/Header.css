@@ -1,15 +1,21 @@
 @import './Variables.css';
 header{
     width: 100vw;
+    height: 15vh;
+    display: grid;
+    grid-template-rows: 5vh 10vh;
 
 }
 header > * {
     z-index: 99;
+    height: 100%
 }
 
 .header-top{
     display: none;
 }
+
+
 
 nav > a.logoAnchor{
     grid-column: span 2;
@@ -28,7 +34,7 @@ nav > .nav.active{
     background-color: var(--gray2);
     width: 100%;
     align-items: start;
- 
+    box-shadow: 5px 5px 6px hsla(0, 0%, 0%, .15);
   
 }
 .nav.active > * {
@@ -42,11 +48,13 @@ nav > a.logo {
     height: auto;
 }
 a.logo > img{
-    width: 100%
+    width: 100%;
+    height: calc(10vh - 20px)
 }
 nav{
     position: relative;
     box-shadow: 2px 2px 2px hsla(0, 0%, 0%, .15);
+    height: 10vh
 }
 .active > span{
     color: var(--primary)
@@ -149,11 +157,11 @@ a.nav_drop_down_link{
 }
 
 header{
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 a.logo > img{
-    width: 75%
+    width: 50%
 }
 
   }

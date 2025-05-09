@@ -3,15 +3,18 @@ import { IoStarSharp } from "react-icons/io5";
 import SectionTitle from "../SectionTitle";
 import heroimage from "../../assets/img/heroimage.png"
 import { BsWindowDesktop } from "react-icons/bs";
+import {Link} from 'react-router-dom';
+import HelmetComponent from '../HelmetComponent'
 
 
 function Home () {
+    const responsiveSize = 1024;
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < responsiveSize);
       
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
+            setIsMobile(window.innerWidth < responsiveSize);
         };
     
         window.addEventListener("resize", handleResize);
@@ -23,8 +26,9 @@ function Home () {
 
     return(       
         <>
-            <section className="landing-hero flex">
-                <div className="flex column landing-hero-content">
+            <HelmetComponent title="Home" description="Southern Tire Masters Home Page" />
+            <section className="landing-hero">
+                <div className="landing-hero-content flex column">
                     <div className="flex landing-hero-header">
                         <IoStarSharp className="starIcon" />
                         <IoStarSharp className="starIcon" />
@@ -34,14 +38,26 @@ function Home () {
                         <p className="secondary">Most-Recommended in Town</p>
                     </div>
                     <h1 className="medium-weight headline">{isMobile ? 
-                        (<h1 className="medium-weight ">Experts in <span className="bold-weight accent"> tire, alignment,
-                        </span> and <span className="bold-weight accent">brake services</span>.</h1>)                        
+                        ( <>Experts in <span className="bold-weight accent"> tire, alignment,
+                        </span> and <span className="bold-weight accent"> brake services.</span></>)                        
                         : 
-                        (<h1 className="medium-weight ">Expert <span className="bold-weight accent">tire, alignment,
-                        </span> and <span className="bold-weight accent">brake services</span> all in <span className="bold-weight accent">one place.</span></h1>
-                        )}
+                        (<>Expert <span className="bold-weight accent">tire, alignment,
+                        </span> and <span className="bold-weight accent">brake services</span> all in <span className="bold-weight accent">one place.</span>
+                        </>)}
                     </h1>
-                    <p className="secondary">We offer comprehensive services to ensure your vehicle stays safe, reliable, and ready for the road</p>
+                    <p className="secondary">{isMobile ? 
+                    (`Ensuring your vehicle’s safety.`) 
+                    : 
+                    (`We offer comprehensive services to ensure your vehicle stays safe, reliable, and ready for the road.`)}
+                        </p>
+                    <div className="button-container"> 
+                    <Link to="/shop-tires" className="primary-button button" > 
+                            <span>Shop Tires</span>  
+                        </Link>
+                        <Link to="/services" className="button secondary-button"> 
+                            <span>View All Services</span>  
+                        </Link>
+                    </div>
                 </div>
                 <img src={heroimage} alt="" />
 

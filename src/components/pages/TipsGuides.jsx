@@ -1,9 +1,11 @@
 import React from "react";
+import HelmetComponent from "../HelmetComponent";
 
 function TipsGuides () {
     return(
         <>
-        <h1>Tips & Guides Page</h1>
+            <HelmetComponent title="Tips & Guides" description="Southern Tire Masters Tips & Guides"/>
+            <h1>Tips & Guides Page</h1>
         </>
     )
 }
