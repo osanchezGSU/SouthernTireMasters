@@ -100,12 +100,7 @@ function HeaderBottom() {
        
             </div>
        </nav>
-        
-       
-
-       <div>
-
-       </div>
+      
        </>
     );
 }

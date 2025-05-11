@@ -5,10 +5,21 @@ import heroimage from "../../assets/img/heroimage.png"
 import { BsWindowDesktop } from "react-icons/bs";
 import {Link} from 'react-router-dom';
 import HelmetComponent from '../HelmetComponent'
-
+import Select from 'react-select';
+import SBLicensePlate from "../SBLicensePlate";
+import SBTireSize from "../SBTireSize";
+import servicesLinks from "../../assets/js/servicesLinks";
+import ServiceCardContainer from "../ServiceCardContainer";
 
 function Home () {
+    const optionA = {value: servicesLinks.tireServiceLinks, label: "Tire Services"}
+    const optionB = {value: servicesLinks.automotiveServiceLinks, label: "Automotive Services"}
+
     const responsiveSize = 1024;
+    const [selectedSearchBy, setSelectedSearchBy] = useState(null);
+    const [selectedToggleOption, setSelectedToggleOption] = useState(optionA)
+
+
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < responsiveSize);
       
@@ -20,6 +31,11 @@ function Home () {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
       }, []);
+      
+      const searchByOptions = [
+        { value: 'tireSize', label: 'Tire Size' },
+        { value: 'licensePlate', label: 'License Plate' }
+      ]
 
 
 
@@ -27,7 +43,7 @@ function Home () {
     return(       
         <>
             <HelmetComponent title="Home" description="Southern Tire Masters Home Page" />
-            <section className="landing-hero">
+            <section className="landing-hero first-section">
                 <div className="landing-hero-content flex column">
                     <div className="flex landing-hero-header">
                         <IoStarSharp className="starIcon" />
@@ -63,11 +79,32 @@ function Home () {
 
                 
             </section>
-            <section>
-                <SectionTitle name = "Tire Select"></SectionTitle>
+            <section className="tire-select" >
+                <div className="tire-select-container">
+                    <SectionTitle name = "Tire Select"></SectionTitle>
+                    <h2 className="accent">The Best Tire For Your Needs</h2>
+                    <Select options={searchByOptions} isSearchable={false} placeholder="Search By" onChange={(option) => setSelectedSearchBy(option.value)}/>
+                    {!selectedSearchBy
+                        ? null
+                        : selectedSearchBy === 'tireSize'
+                        ? <SBTireSize />
+                        : <SBLicensePlate />}
+
+                </div>
             </section>
-            <section>
+            <section className="services">
                 <SectionTitle name = "Our Services"></SectionTitle>
+                <div className="toggle-container">
+                    <div onClick={() => (setSelectedToggleOption(optionA), console.log(selectedToggleOption))} className={`toggle-button ${selectedToggleOption.value === optionA.value ? "active" : ""}`} >
+                        <span>{optionA.label}</span>
+                    </div>
+                    <div onClick={() => (setSelectedToggleOption(optionB), console.log(selectedToggleOption))} className={`toggle-button ${selectedToggleOption.value === optionB.value ? "active" : ""}`} >
+                        <span>{optionB.label}</span>
+                    </div>
+                </div>
+                <ServiceCardContainer serviceType= {selectedToggleOption.value}/>
+
+
             </section>
             <section>
                 <SectionTitle name = "Locations"></SectionTitle>

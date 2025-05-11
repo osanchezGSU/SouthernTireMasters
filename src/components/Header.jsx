@@ -8,7 +8,6 @@ function Header() {
     return(
         <header>
             <HeaderTop />
-      
             <HeaderBottom />
         </header>
     );

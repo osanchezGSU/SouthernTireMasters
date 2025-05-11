@@ -10,6 +10,7 @@
 
 .landing-hero{
   position: relative;
+
 }
 
 .landing-hero > img{
@@ -42,10 +43,134 @@
   padding-top: 20px;
   grid-template-columns: 1fr 1fr;
 }
+section.tire-select{
+  background-image: url(../img/tires_backdrop.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 90vh;
+  background-position: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+section.first-section{
+  margin-top: 10vh;
+}
+.tire-select-container{
+  grid-column: span 4;
+  background-color: hsla(0, 0%, 100%, .90);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 10px;
+  text-align: center;
+  gap: 15px
+}
+.css-b62m3t-container, .css-3iigni-container{
+  width: 75%;
+}
+.css-b62m3t-container > *, .css-3iigni-container > *{
+  text-align: left;
+}
+input{
+  width: 75%;
+    border: none;
+    padding: 2px 8px;
+    line-height: 36px;
+    border-color: hsl(0, 0%, 80%);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+}
+section.services {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  align-items: center;
+}
+section.services > *{
+  grid-column: span 4;
+  text-align: center;
+}
+.toggle-container{
+  grid-column: span 4;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  border-radius: 50px;
+  border: 1px solid var(--dark-gray);
+  padding: 2px;
+  background-color: var(--gray2);
+}
+.toggle-button{
+  padding: 10px;
+  border-radius: 50px;
+}
+.toggle-button.active{
+  background-color: var(--primary);
+}
+.toggle-button.active > span{
+  color: var(--light-gray)
+}
+.cardContainer{
+  width: 100%;
+}
+.card{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, .15) ;
+  text-align: left;
+  border: 2px solid var(--light-gray);
+  height: 400px;
+  justify-self: center;
+}
+.card > img{
+  width: 100%;
+  height: 45%;
+  border-radius: 2px 2px 0px 0px;
+}
+.swiper-wrapper{
+  padding: 50px 0px;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200%
+}
+.card-body > .card-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+
+}
+
+.card-content > p{
+  font-size: 18px;
+ 
+}
+.card
+
 
 
 /* Tablets */
 @media (min-width: 768px) {
+  section.first-section{
+    margin-top: 15vh;
+  }
+  .section.tire-select{
+    height: 85vh
+  }
+
 
   }
   
@@ -70,17 +195,26 @@
       text-align: start;
       gap: 5px;
       padding-top: 20px;
+ 
     }
     .landing-hero > img{
+     
       grid-column: 5 / -1;
       grid-row: 1;
       z-index: 1;
      align-self: flex-end;
      filter: brightness(.99);
     }
-    .button-container{
-     
+    .tire-select-container{
+      grid-column: 6 / -1;
+      text-align: left;
+      align-items: start;
+      padding: 0px 50px
     }
+
+  
+ 
+   
 
 
   }

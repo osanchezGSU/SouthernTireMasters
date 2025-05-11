@@ -1,9 +1,13 @@
 @import './Variables.css';
 header{
     width: 100vw;
-    height: 15vh;
+    height: 10vh;
     display: grid;
     grid-template-rows: 5vh 10vh;
+    position: fixed;
+    top: 0;
+    background-color: #ffff;
+    z-index: 99;
 
 }
 header > * {
@@ -157,8 +161,7 @@ a.nav_drop_down_link{
 }
 
 header{
-  /* display: flex;
-  flex-direction: column; */
+    height: 15vh
 }
 a.logo > img{
     width: 50%
