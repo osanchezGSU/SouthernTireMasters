@@ -11,14 +11,20 @@ import SBTireSize from "../SBTireSize";
 import servicesLinks from "../../assets/js/servicesLinks";
 import ServiceCardContainer from "../ServiceCardContainer";
 import ServiceCardGrid from "../ServiceCardGrid";
+import ClosestLocationComponent from "../ClosestLocationComponent";
+import LocationListComponent from "../LocationaListComponent";
+import { LoadScript } from '@react-google-maps/api';
 
 function Home () {
+    //  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
     const optionA = {value: servicesLinks.tireServiceLinks, label: "Tire Services"}
     const optionB = {value: servicesLinks.automotiveServiceLinks, label: "Automotive Services"}
 
     const responsiveSize = 1024;
     const [selectedSearchBy, setSelectedSearchBy] = useState(null);
-    const [selectedToggleOption, setSelectedToggleOption] = useState(optionA)
+    const [selectedToggleOption, setSelectedToggleOption] = useState(optionA);
+    const [location, setLocation] = useState({ lat: null, lng: null });
+    const [error, setError] = useState(null);
 
 
 
@@ -32,6 +38,26 @@ function Home () {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
       }, []);
+
+      useEffect(() => {
+        if (!navigator.geolocation) {
+          setError('Geolocation is not supported by your browser');
+          return;
+        }
+    
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setLocation({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            });
+          },
+          (err) => {
+            setError(`Error: ${err.message}`);
+          }
+        );
+      }, []);
+
       
       const searchByOptions = [
         { value: 'tireSize', label: 'Tire Size' },
@@ -68,7 +94,7 @@ function Home () {
                     (`We offer comprehensive services to ensure your vehicle stays safe, reliable, and ready for the road.`)}
                         </p>
                     <div className="button-container"> 
-                    <Link to="/shop-tires" className="primary-button button" > 
+                        <Link to="/shop-tires" className="primary-button button" > 
                             <span>Shop Tires</span>  
                         </Link>
                         <Link to="/services" className="button secondary-button"> 
@@ -112,7 +138,11 @@ function Home () {
 
             </section>
             <section>
-                <SectionTitle name = "Locations"></SectionTitle>
+                {location ? (<LoadScript googleMapsApiKey="AIzaSyCF_5qaMWKf4LyZfYA14lLxy_vG14JIDJE">
+      <ClosestLocationComponent userLocation={location} />
+    </LoadScript>) : 
+                (<> <SectionTitle name = "Services"></SectionTitle>
+                 <LocationListComponent /></>)}
             </section>
             <section>
                 <SectionTitle name = "Testimonials"></SectionTitle>

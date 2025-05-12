@@ -65,12 +65,12 @@ p{
   color: var(--primary);
 }
 section{
-  width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 10px 16px;
-  min-height: 85vh;
+  padding: 25px 16px;
+
   
 }
 .flex{
@@ -134,7 +134,7 @@ main{
 section{
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
-  padding: 10px 100px;
+  padding: 25px 100px;
   
 
 }

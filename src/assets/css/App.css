@@ -126,7 +126,7 @@ section.services > *{
   border-radius: 5px;
   box-shadow: 5px 5px 5px hsla(0, 0%, 0%, .15) ;
   text-align: left;
-  border: 2px solid var(--light-gray);
+
   height: 400px;
   justify-self: center;
 }
@@ -158,6 +158,10 @@ section.services > *{
 .card-content > p{
   font-size: 18px;
  
+}
+.closest-location-card{
+  grid-column: span 4;
+  box-shadow: 2px 5px 3px hsla(0, 0%, 0%, .15);
 }
 
 
