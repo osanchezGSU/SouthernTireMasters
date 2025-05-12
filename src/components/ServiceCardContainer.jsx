@@ -1,7 +1,8 @@
-import React from "react";
-import {Link} from 'react-router-dom'
+import React, {useEffect, useState} from "react";
+
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Pagination } from 'swiper/modules';
+import ServiceCard from "./ServiceCard";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,30 +10,35 @@ import 'swiper/css/pagination';
 
 
 function ServiceCardContainer ({serviceType}) {
+    const mobileSize = 768;
+    const [isMobile, setIsMobile] = useState(window.innerWidth < mobileSize);
+          
+        useEffect(() => {
+            const handleResize = () => {
+                setIsMobile(window.innerWidth < mobileSize);
+            };
+        
+            window.addEventListener("resize", handleResize);
+            return () => window.removeEventListener("resize", handleResize);
+          }, []);
     return(
         <div className="cardContainer">
             <Swiper
                
                 modules={[Pagination]}
-          
-                pagination={{ clickable: true }}
+                
+                loop={true}
+                pagination={{ clickable: true,
+                    dynamicBullets: true
+                 }}
                  spaceBetween={25}
-                 slidesPerView={1}
+                 slidesPerView={isMobile ? 1 : 2}
                  onSlideChange={() => console.log('slide change')}
                  onSwiper={(swiper) => console.log(swiper)}
             >
                 {serviceType.map((service) => (
                     <SwiperSlide key={service.id}>
-                        <div className="card" >
-                            <img src={service.img} alt={service.name} />
-                            <div className="card-body">
-                                <div className="card-content">
-                                    <h2>{service.name}</h2>
-                                    <p>{service.description}</p>
-                                </div>
-                                <Link to={service.url} className="button primary-button"><span>Learn More</span></Link>
-                            </div>
-                        </div>
+                       <ServiceCard {...service} />
                     </SwiperSlide>
                 ))}
             </Swiper>

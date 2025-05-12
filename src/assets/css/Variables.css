@@ -3,6 +3,13 @@
   --regular-width: 400;
   --bold-width: 700;
 
+  --light-weight: 300;
+  --regular-weight: 400;
+  --medium-weight: 500;
+  --semi-bold-weight: 600;
+  --bold-weight: 700;
+
+
   --dark-gray: #1F2933;
   --gray: #616E7C;
   --gray2: #E4E7EB;

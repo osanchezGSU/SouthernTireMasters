@@ -10,6 +10,7 @@ import SBLicensePlate from "../SBLicensePlate";
 import SBTireSize from "../SBTireSize";
 import servicesLinks from "../../assets/js/servicesLinks";
 import ServiceCardContainer from "../ServiceCardContainer";
+import ServiceCardGrid from "../ServiceCardGrid";
 
 function Home () {
     const optionA = {value: servicesLinks.tireServiceLinks, label: "Tire Services"}
@@ -102,7 +103,11 @@ function Home () {
                         <span>{optionB.label}</span>
                     </div>
                 </div>
-                <ServiceCardContainer serviceType= {selectedToggleOption.value}/>
+                {isMobile ? (
+                    <ServiceCardContainer serviceType= {selectedToggleOption.value}/>
+                ) : (
+                    <ServiceCardGrid serviceType={selectedToggleOption.value} />
+                )}
 
 
             </section>

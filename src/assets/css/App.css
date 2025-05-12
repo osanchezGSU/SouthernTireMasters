@@ -97,19 +97,20 @@ section.services > *{
 .toggle-container{
   grid-column: span 4;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
   border-radius: 50px;
   border: 1px solid var(--dark-gray);
   padding: 2px;
   background-color: var(--gray2);
+
 }
 .toggle-button{
   padding: 10px;
   border-radius: 50px;
+    cursor: pointer;
 }
 .toggle-button.active{
   background-color: var(--primary);
+  cursor:inherit;
 }
 .toggle-button.active > span{
   color: var(--light-gray)
@@ -158,7 +159,7 @@ section.services > *{
   font-size: 18px;
  
 }
-.card
+
 
 
 
@@ -166,6 +167,8 @@ section.services > *{
 @media (min-width: 768px) {
   section.first-section{
     margin-top: 15vh;
+    height: 85vh;
+    overflow: hidden;
   }
   .section.tire-select{
     height: 85vh
@@ -211,6 +214,56 @@ section.services > *{
       align-items: start;
       padding: 0px 50px
     }
+    section.services > h3{
+      width: 100%;
+      text-align: left;
+    }
+    .card-container-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      gap: 25px
+    }
+    .card-container-grid  .card{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 300px;
+    }
+    .card-container-grid  img{
+      position: absolute;
+      height: 100%;
+      z-index: -2;
+      object-fit: cover;
+      filter: brightness(.50);
+    }
+     .card-container-grid > .card.card.hovered  img{
+      transform: scale(1.10);
+    }
+      .card-container-grid >  .card.hovered  h2{
+        display: none;
+    }
+
+    .card-container-grid  h2{
+      position: absolute;
+      bottom: 5%;
+      text-align: center;
+      color: var(--light-gray);
+      width: 100%;
+      left: 0;
+    }
+    .card-container-grid p, .card-container-grid a{
+      display: none;
+    }
+    .card-container-grid > .card.card.hovered p, .card-container-grid > .card.hovered a{
+      display: flex;
+    }
+    .card-container-grid > .card.card.hovered p{
+      color: var(--light-gray);
+      font-size: 20px;
+      font-weight: var(--medium-weight);
+    }
+
 
   
  
