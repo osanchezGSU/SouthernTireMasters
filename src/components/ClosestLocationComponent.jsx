@@ -1,12 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import { LoadScript, GoogleMap, Marker} from '@react-google-maps/api';
 import locations from '../assets/js/locations';
-import { IoMdPin } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
-import {Link} from 'react-router-dom';
+
+import marker from '../assets/img/marker.png'
+import LocationListCard from "./LocationListCard";
 
 function ClosestLocationComponent ({userLocation}) {
     const [closest, setClosest] = useState(null);
+
+
     useEffect(() => {
         const directionsService = new window.google.maps.DirectionsService();
         
@@ -42,7 +44,13 @@ function ClosestLocationComponent ({userLocation}) {
               const closestLocation = validResults.reduce((min, curr) =>
                 curr.distanceInMiles < min.distanceInMiles ? curr : min
               );
+
+              locations.forEach((loc) => {
+                loc.isClosest = loc === closestLocation;
+              });
+
               setClosest(closestLocation);
+
             }
           };
         
@@ -51,38 +59,44 @@ function ClosestLocationComponent ({userLocation}) {
           calculateDistances();
         }
       }, [userLocation]);
-    
-    
 
+    
+    
+     
     return (
       <>
         {closest ? (
             <div className="closest-location-card">
-                <GoogleMap
-                mapContainerClassName="map-container"
-                center={closest.coordinates}
-                zoom={15}
-                >
-                {/* Add markers or other components here */}
-                </GoogleMap>
-                <div className="closest-location-card-body">
-                    <div className="body-header"><p className="label">Closest Location</p> <p>{closest.distanceInMiles} mi</p></div>
-                    <h2 className="primary body-title">{closest.name}</h2>
-                    <div className="body-info"> <FaPhoneAlt /> <a href={`tel:${closest.phone}`}><h3>{closest.phone}</h3></a></div>
-                    <div className="body-info"><IoMdPin /> <h3>{closest.streetAddress} {closest.city}, {closest.state} {closest.zipCode}</h3></div>
-                    <div className="body-buttons">
-                        <Link to="/locations" className="primary-button button" > 
-                            <span>See Other Locations!</span>  
-                        </Link>
-                        <a 
-                          href={`https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lng}&destination=${closest.coordinates.lat},${closest.coordinates.lng}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="button secondary-button"
-                        >Get Directions</a>
-
-                    </div>
-                </div>
+                 <GoogleMap
+              mapContainerClassName="map-container"
+              center={closest.coordinates}
+              zoom={15}
+              options={{
+                mapId: 'c1cae4e3db6fb493',
+              }}>
+                <Marker
+                  position={closest.coordinates}
+                  title={closest.name}
+                  labelOrigin={new window.google.maps.Point(0, 40)} 
+                  
+                />
+              </GoogleMap>
+              <LocationListCard 
+                isClosest={true}
+                distanceInMiles={closest.distanceInMiles}
+                name={closest.name} 
+                phone={closest.phone}
+                streetAddress={closest.streetAddress}
+                city={closest.city}
+                state={closest.state}
+                zipCode={closest.zipCode}
+                userLat={userLocation.lat}
+                userLng={userLocation.lng}
+                closestLat={closest.coordinates.lat}
+                closestLng={closest.coordinates.lng}
+               />
+          
+              
             </div>
         ) : 
         (

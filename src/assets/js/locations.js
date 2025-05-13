@@ -9,7 +9,8 @@ const loactions = [
         coordinates: {
             lat: 33.41251505485126,
             lng: -84.31427249152073
-        }
+        },
+        isClosest: false
         
     },
     {
@@ -23,7 +24,8 @@ const loactions = [
         coordinates: {
             lat: 33.25660525850755,
             lng: -84.28763935352374
-        }
+        },
+        isClosest: false
     }
 ];
 

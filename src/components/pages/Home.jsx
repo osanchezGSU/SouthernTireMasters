@@ -12,7 +12,7 @@ import servicesLinks from "../../assets/js/servicesLinks";
 import ServiceCardContainer from "../ServiceCardContainer";
 import ServiceCardGrid from "../ServiceCardGrid";
 import ClosestLocationComponent from "../ClosestLocationComponent";
-import LocationListComponent from "../LocationaListComponent";
+import LocationComponent from "../LocationComponent";
 import { LoadScript } from '@react-google-maps/api';
 
 function Home () {
@@ -138,11 +138,13 @@ function Home () {
 
             </section>
             <section>
-                {location ? (<LoadScript googleMapsApiKey="AIzaSyCF_5qaMWKf4LyZfYA14lLxy_vG14JIDJE">
-      <ClosestLocationComponent userLocation={location} />
-    </LoadScript>) : 
-                (<> <SectionTitle name = "Services"></SectionTitle>
-                 <LocationListComponent /></>)}
+                <LoadScript googleMapsApiKey="AIzaSyCF_5qaMWKf4LyZfYA14lLxy_vG14JIDJE" >
+                    {location.lat && location.lng ? (
+                    <ClosestLocationComponent userLocation={location} />
+                    ) : 
+                    (<> <SectionTitle name = "Locations"></SectionTitle>
+                    <LocationComponent isMobile={isMobile}/></>)}
+                 </LoadScript>
             </section>
             <section>
                 <SectionTitle name = "Testimonials"></SectionTitle>
