@@ -109,8 +109,8 @@ main{
 }
 .secondary-button{
   background-color: transparent;
-
   border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
 
@@ -135,7 +135,7 @@ section{
   grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   padding: 25px 100px;
-  
+
 
 }
 h1 {

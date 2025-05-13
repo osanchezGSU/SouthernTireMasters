@@ -52,32 +52,34 @@ function ClosestLocationComponent ({userLocation}) {
         }
       }, [userLocation]);
     
-      const containerStyle = {
-        width: '100%',
-        height: '150px'
-      };
-      
+    
 
     return (
       <>
         {closest ? (
             <div className="closest-location-card">
                 <GoogleMap
-                mapContainerStyle={containerStyle}
+                mapContainerClassName="map-container"
                 center={closest.coordinates}
                 zoom={15}
                 >
                 {/* Add markers or other components here */}
                 </GoogleMap>
                 <div className="closest-location-card-body">
-                    <div><p>Closest Location</p> <p>{closest.distanceInMiles} mi</p></div>
-                    <h3 className="primary">{closest.name}</h3>
-                    <div> <FaPhoneAlt /> <a href="">{closest.phone}</a></div>
-                    <div><IoMdPin /> <p>{closest.streetAddress} {closest.city}, {closest.state} {closest.zipCode}</p></div>
-                    <div>
-                        <Link to="/shop-tires" className="primary-button button" > 
+                    <div className="body-header"><p className="label">Closest Location</p> <p>{closest.distanceInMiles} mi</p></div>
+                    <h2 className="primary body-title">{closest.name}</h2>
+                    <div className="body-info"> <FaPhoneAlt /> <a href={`tel:${closest.phone}`}><h3>{closest.phone}</h3></a></div>
+                    <div className="body-info"><IoMdPin /> <h3>{closest.streetAddress} {closest.city}, {closest.state} {closest.zipCode}</h3></div>
+                    <div className="body-buttons">
+                        <Link to="/locations" className="primary-button button" > 
                             <span>See Other Locations!</span>  
                         </Link>
+                        <a 
+                          href={`https://www.google.com/maps/dir/?api=1&origin=${userLocation.lat},${userLocation.lng}&destination=${closest.coordinates.lat},${closest.coordinates.lng}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="button secondary-button"
+                        >Get Directions</a>
 
                     </div>
                 </div>
