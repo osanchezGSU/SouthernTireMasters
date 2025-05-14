@@ -14,6 +14,7 @@ import ServiceCardGrid from "../ServiceCardGrid";
 import ClosestLocationComponent from "../ClosestLocationComponent";
 import LocationComponent from "../LocationComponent";
 import { LoadScript } from '@react-google-maps/api';
+import BenefitsCardContainer from "../BenfitsCardContainer";
 
 function Home () {
     //  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -120,7 +121,7 @@ function Home () {
                 </div>
             </section>
             <section className="services">
-                <SectionTitle name = "Our Services"></SectionTitle>
+                <SectionTitle name = "Expert Tire & Auto Services"></SectionTitle>
                 <div className="toggle-container">
                     <div onClick={() => (setSelectedToggleOption(optionA), console.log(selectedToggleOption))} className={`toggle-button ${selectedToggleOption.value === optionA.value ? "active" : ""}`} >
                         <span>{optionA.label}</span>
@@ -137,20 +138,21 @@ function Home () {
 
 
             </section>
-            <section>
+            <section className="location-section">
                 <LoadScript googleMapsApiKey="AIzaSyCF_5qaMWKf4LyZfYA14lLxy_vG14JIDJE" >
                     {location.lat && location.lng ? (
                     <ClosestLocationComponent userLocation={location} />
                     ) : 
-                    (<> <SectionTitle name = "Locations"></SectionTitle>
+                    (<> <SectionTitle name = "Find a Location Near You"></SectionTitle>
                     <LocationComponent isMobile={isMobile}/></>)}
                  </LoadScript>
             </section>
-            <section>
+            {/* <section>
                 <SectionTitle name = "Testimonials"></SectionTitle>
-            </section>
+            </section> */}
             <section>
-                <SectionTitle name = "The Value We Provide"></SectionTitle>
+                <SectionTitle name = "Our Commitment to You"></SectionTitle>
+                <BenefitsCardContainer />
             </section>
 
         </>

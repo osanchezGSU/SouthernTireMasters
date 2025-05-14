@@ -35,7 +35,7 @@ h3{
   font-size: 20px;
 }
 p{
-  font-size: 16px;
+  font-size: 18px;
 }
 .light-weight{
   font-weight: 300;
@@ -111,8 +111,11 @@ main{
   background-color: transparent;
   border: 2px solid var(--primary);
   color: var(--primary);
+  height: 100%;
 }
-
+.section-title{
+  grid-column: 1 / -1;
+}
 
 /* Tablets */
 @media (min-width: 768px) {

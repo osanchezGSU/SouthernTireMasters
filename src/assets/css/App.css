@@ -207,7 +207,117 @@ section.services > *{
   width: 100%;
   height: 150px
 }
+.location-section > .section-title{
+  grid-column: span 4;
+  width: 100%;
+  text-align: left;
+}
+.location-component-mobile {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.location-component-mobile > .toggle-button-container{
+  width: 100%;
+  display: flex;
+  justify-content: end;
 
+}
+.location-component-mobile > .toggle-button-container > .toggle-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray2);
+  border-radius: 5px;
+  gap: 5px;
+}
+ .location-list-conatiner{
+  background-color: var(--light-gray);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+
+}
+ .location-list-conatiner > .location-card{
+  background-color: #ffff;
+  box-shadow: 3px 5px 3px  hsla(0, 0%, 0%, .15);
+}
+.location-component-mobile > .location-map-container {
+  height: 400px;
+}
+.location-component-mobile > .location-map-container > .map-container{
+  height: 100% 
+}
+p.isOpen-label{
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin-top: 5px;
+}
+p.isOpen-label.open{
+  background-color: #C6F7E2;
+    color: #014D40;
+
+    border-radius: 50px;
+    padding: 5px 10px;
+   
+}
+p.isOpen-label.closed{
+  background-color: #FFBDBD;
+    color: #8A041A;
+   
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+.gm-style-iw.gm-style-iw-c{
+  height: fit-content !important;
+  max-height: none !important
+}
+.location-component-mobile > .location-map-container .infoWindow-card{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.benefit-container-mobile{
+  grid-column: 1 / -1;
+}
+.benefit-card{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center; 
+  padding: 50px 10px;
+  background-color: var(--light-gray);
+  box-shadow: 5p;
+}
+.benefit-card div{
+  background-color: var(--primary);
+  border-radius: 50%;
+  align-items: center;
+  height: 60PX;
+  width: 60PX;
+  display: flex;
+  justify-content: center;
+ align-items: center;
+ margin-bottom: 10px;
+}
+.benefit-card svg{
+  font-size: 40px;
+  color: #ffff;
+}
+.benefit-card svg > *{
+  color: #fff;
+}
+.benefit-card p {
+  text-align: center;
+  padding-top: 50px;
+}
+.benefit-card h2{
+  text-align: center;
+}
 
 
 /* Tablets */
@@ -220,12 +330,17 @@ section.services > *{
   .section.tire-select{
     height: 85vh
   }
+  .benefit-container-mobile{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
 
 
   }
   
   /* Laptops */
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     /* Laptop styles here */
     .app > .grid{
       max-width: 1024px;
@@ -312,21 +427,35 @@ section.services > *{
     }
 
     .closest-location-card{
-  grid-column: span 12;
-  display: flex;
-  flex-direction: row-reverse;
+      grid-column: span 12;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .map-container{
+      width: 75%;
+      height: 100%
+    }
+    .body-info > svg {
+      font-size: 30px !important
+    }
+    .closest-location-card-body > .body-buttons{
+      justify-content: start;
+      gap: 25px
+    }
+    .location-component-desktop{
+      grid-column: 2 /-2;
+      display: flex;
+    }
+    .location-section > .section-title{
+      grid-column: 1 / -1;
+      width: 100%;
+      text-align: left;
 }
-.map-container{
-  width: 75%;
-  height: 100%
-}
-.body-info > svg {
-  font-size: 30px !important
-}
-.closest-location-card-body > .body-buttons{
-  justify-content: start;
-  gap: 25px
-}
+    .location-component-desktop > .location-map-container, .location-list-conatiner{
+      height: 100%;
+      width: 100%;
+    }
+      
 
 
   

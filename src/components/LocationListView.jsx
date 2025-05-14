@@ -16,6 +16,8 @@ function LocationListView () {
                         zipCode={location.zipCode}
                         isClosest={location.isClosest}
                         {...(location.distanceInMiles != null && { distanceInMiles: location.distanceInMiles })}
+                        isOpen={location.isOpen}
+                        shareLink={location.shareLink}
                     />
             ))}
         </div>

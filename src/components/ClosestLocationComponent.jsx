@@ -74,12 +74,12 @@ function ClosestLocationComponent ({userLocation}) {
                   options={{
                     mapId: 'c1cae4e3db6fb493',
                   }}>
-                <Marker
+                {/* <Marker
                   position={closest.coordinates}
                   title={closest.name}
                   labelOrigin={new window.google.maps.Point(0, 40)} 
                   
-                />
+                /> */}
               </GoogleMap>
               <LocationListCard 
                 isClosest={true}
@@ -90,10 +90,8 @@ function ClosestLocationComponent ({userLocation}) {
                 city={closest.city}
                 state={closest.state}
                 zipCode={closest.zipCode}
-                userLat={userLocation.lat}
-                userLng={userLocation.lng}
-                closestLat={closest.coordinates.lat}
-                closestLng={closest.coordinates.lng}
+                shareLink={closest.shareLink}
+                isOpen={closest.isOpen}
                />
           
               

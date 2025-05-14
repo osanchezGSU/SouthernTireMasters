@@ -20,12 +20,18 @@ function ServicesDropDown(props){
         <div className="dropDownMenu">
             <span>Tire Services</span>
             {links.tireServiceLinks.map(createDropDown)}
-            <a href="" className="link">View All <IoIosArrowForward /></a>
+            <Link to="/services" className="link"> 
+                            <span>View All</span>
+                            <IoIosArrowForward />  
+            </Link>
         </div>
         <div className="dropDownMenu">
             <span>Automotive Services</span>
             {links.automotiveServiceLinks.map(createDropDown)}
-            <a href="" className="link">View All <IoIosArrowForward /></a>
+            <Link to="/services" className="link"> 
+                            <span>View All</span>
+                            <IoIosArrowForward />  
+            </Link>
         </div>
     </div>
     )

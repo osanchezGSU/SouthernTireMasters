@@ -9,7 +9,7 @@ function DropDownWindow(props) {
     function createDropDown(link){
         return (
             
-            <Link key = {link.id} className="link">
+            <Link key = {link.id} className="link" to={link.url}>
                 <span>{link.name}</span>
                 <IoIosArrowForward />
             </Link>
