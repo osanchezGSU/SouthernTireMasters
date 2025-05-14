@@ -1,8 +1,8 @@
 import React, {useEffect, useState, useRef} from "react";
-import { LoadScript, GoogleMap, Marker} from '@react-google-maps/api';
+import { GoogleMap, Marker} from '@react-google-maps/api';
+
 import locations from '../assets/js/locations';
 
-import marker from '../assets/img/marker.png'
 import LocationListCard from "./LocationListCard";
 
 function ClosestLocationComponent ({userLocation}) {
@@ -68,12 +68,12 @@ function ClosestLocationComponent ({userLocation}) {
         {closest ? (
             <div className="closest-location-card">
                  <GoogleMap
-              mapContainerClassName="map-container"
-              center={closest.coordinates}
-              zoom={15}
-              options={{
-                mapId: 'c1cae4e3db6fb493',
-              }}>
+                  mapContainerClassName="map-container"
+                  center={closest.coordinates}
+                  zoom={15}
+                  options={{
+                    mapId: 'c1cae4e3db6fb493',
+                  }}>
                 <Marker
                   position={closest.coordinates}
                   title={closest.name}

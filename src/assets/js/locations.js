@@ -10,7 +10,8 @@ const loactions = [
             lat: 33.41251505485126,
             lng: -84.31427249152073
         },
-        isClosest: false
+        isClosest: false,
+        distanceInMiles: null
         
     },
     {
@@ -25,7 +26,8 @@ const loactions = [
             lat: 33.25660525850755,
             lng: -84.28763935352374
         },
-        isClosest: false
+        isClosest: false,
+        distanceInMiles: null
     }
 ];
 
