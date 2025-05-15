@@ -48,7 +48,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='app-container'>
       <Header />
       <main className='app'>
         {routes}

@@ -1,4 +1,83 @@
 @import './Variables.css';
 footer{
     background-color: var(--light-gray);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px 16px;
+   
+}
+footer > div {
+    grid-column: 1 /-1;
+    width: 100%
+}
+footer img {
+    width: 50%;
+}
+.footer-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+}
+.hop{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.social-media{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+}
+.social-media div{
+    display: flex;
+    gap: 10px;
+    
+}
+.social-media div svg{
+    font-size: 40px;
+}
+.copyright-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 1025px) {
+    footer{
+         grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+        padding: 10px 100px;
+    }
+    footer > div.top{
+        display: flex;
+        width: 100%;
+        justify-content: space-between  ;
+        gap: 100px;
+    }
+    .top > a{
+        grid-column: 1;
+
+    }
+    footer img{
+        width: 100%;
+        
+    }
+    .footer-nav{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-align: center;
+ 
+    }
+    .hop{
+        grid-column: -1;
+    }
+ 
 }
