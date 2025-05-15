@@ -4,6 +4,7 @@ import backgroundImage from "../../assets/img/serviceImages/tireRotationService.
 import FirstSection from "../FirstSection";
 import ServiceToggleComponent from "../ServiceToggleComponent";
 
+
 function Services () {
     const responsiveSize = 1024;
      const [isMobile, setIsMobile] = useState(window.innerWidth < responsiveSize);

@@ -2,15 +2,11 @@ import React, {useState, useEffect} from "react";
 import { IoStarSharp } from "react-icons/io5";
 import SectionTitle from "../SectionTitle";
 import heroimage from "../../assets/img/heroimage.png"
-import { BsWindowDesktop } from "react-icons/bs";
 import {Link} from 'react-router-dom';
 import HelmetComponent from '../HelmetComponent'
 import Select from 'react-select';
 import SBLicensePlate from "../SBLicensePlate";
 import SBTireSize from "../SBTireSize";
-import servicesLinks from "../../assets/js/servicesLinks";
-import ServiceCardContainer from "../ServiceCardContainer";
-import ServiceCardGrid from "../ServiceCardGrid";
 import ClosestLocationComponent from "../ClosestLocationComponent";
 import LocationComponent from "../LocationComponent";
 import { LoadScript } from '@react-google-maps/api';
