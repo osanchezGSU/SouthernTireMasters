@@ -5,19 +5,10 @@ import backgroundImage from "../../assets/img/locationImage.webp"
 import SectionTitle from "../SectionTitle";
 import LocationComponent from "../LocationComponent";
 import { LoadScript } from '@react-google-maps/api';
+import useResponsive from "../hooks/useResponsive";
 
 function Locations () {
-        const responsiveSize = 1024;
-     const [isMobile, setIsMobile] = useState(window.innerWidth < responsiveSize);
-              
-        useEffect(() => {
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < responsiveSize);
-            };
-            
-            window.addEventListener("resize", handleResize);
-            return () => window.removeEventListener("resize", handleResize);
-        }, []);
+       const isMobile = useResponsive();
     return(
         <>
             <HelmetComponent title="Locations" description="Southern Tire Masters List of Locations" />

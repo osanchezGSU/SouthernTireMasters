@@ -3,20 +3,10 @@ import HelmetComponent from "../HelmetComponent";
 import backgroundImage from "../../assets/img/serviceImages/tireRotationService.jpeg"
 import FirstSection from "../FirstSection";
 import ServiceToggleComponent from "../ServiceToggleComponent";
-
+import useResponsive from "../hooks/useResponsive";
 
 function Services () {
-    const responsiveSize = 1024;
-     const [isMobile, setIsMobile] = useState(window.innerWidth < responsiveSize);
-          
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < responsiveSize);
-        };
-        
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+   const isMobile = useResponsive();
 
     return(
         <>

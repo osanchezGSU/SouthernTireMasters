@@ -12,29 +12,18 @@ import LocationComponent from "../LocationComponent";
 import { LoadScript } from '@react-google-maps/api';
 import BenefitsCardContainer from "../BenfitsCardContainer";
 import ServiceToggleComponent from "../ServiceToggleComponent";
+import useResponsive from "../hooks/useResponsive";
 
 function Home () {
     //  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-  
+     const isMobile = useResponsive();
 
-    const responsiveSize = 1024;
+
     const [selectedSearchBy, setSelectedSearchBy] = useState(null);
    
     const [location, setLocation] = useState({ lat: null, lng: null });
     const [error, setError] = useState(null);
 
-
-
-    const [isMobile, setIsMobile] = useState(window.innerWidth < responsiveSize);
-      
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < responsiveSize);
-        };
-    
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-      }, []);
 
       useEffect(() => {
         if (!navigator.geolocation) {
