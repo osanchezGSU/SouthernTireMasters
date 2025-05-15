@@ -52,7 +52,7 @@ section.tire-select{
   padding-top: 0;
   padding-bottom: 0;
 }
-section.first-section{
+section.first-section, div.first-section{
   margin-top: 10vh;
 }
 .tire-select-container{
@@ -322,12 +322,32 @@ p.isOpen-label.closed{
   grid-column: 1 / -1;
   width: 100%;
 }
+div.first-section{
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+div.first-section h1{
+  color: var(--light-gray);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.financing-img{
+  margin-top: 10vh;
+  height: 45vh;
+  width: 100%;
+}
 
 
 
 
 /* Tablets */
 @media (min-width: 768px) {
+
   section.first-section{
     margin-top: 15vh;
     max-height: 85vh;
@@ -341,6 +361,20 @@ p.isOpen-label.closed{
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
   }
+  div.first-section{
+    height: 50vh;
+    margin-top: 15vh;
+  }
+  div.first-section >  h1{
+    right: 100px;
+  }
+  .financing-img{
+    margin-top: 15vh;
+    width: 100%;
+    height: 85vh;
+    justify-self: center;
+
+}
 
 
   }
@@ -455,13 +489,19 @@ p.isOpen-label.closed{
     .location-section > .section-title{
       grid-column: 1 / -1;
       width: 100%;
-      text-align: left;
-}
+      text-align: left; 
+    }
     .location-component-desktop > .location-map-container, .location-list-conatiner{
       height: 100%;
       width: 100%;
     }
-      
+    .financing-img{
+    width: 50%;
+    height: 85vh;
+    justify-self: center;
+    display: flex;
+    align-items: center; 
+    }
 
 
   

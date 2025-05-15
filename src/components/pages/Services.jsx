@@ -1,11 +1,12 @@
 import React from "react";
 import HelmetComponent from "../HelmetComponent";
-
+import backgroundImage from "../../assets/img/serviceImages/tireRotationService.jpeg"
+import FirstSection from "../FirstSection";
 function Services () {
     return(
         <>
             <HelmetComponent title="Services" description="Southern Tire Masters Services Page."/>
-            <h1>Services Page</h1>
+            <FirstSection title="Services" backgroundImage={backgroundImage}/>
         </>
     )
 }
