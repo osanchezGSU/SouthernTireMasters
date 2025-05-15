@@ -5,13 +5,17 @@ import services from '../../assets/js/servicesLinks'
 import FirstSection from "../FirstSection";
 
 
+
 function ServicePage()  {
+    
     const { name } = useParams();
     console.log(name)
     const allServices = [...services.tireServiceLinks, ...services.automotiveServiceLinks];
      const service = allServices.find(
         (item) => item.paraName === name
     );
+
+   
 
     return(
          <div>
@@ -20,6 +24,7 @@ function ServicePage()  {
                 description={`Southern Tire Masters ${service.name} page.`} 
             />
             <FirstSection backgroundImage={service.img} title={service.name}/>
+            
             
         </div>
     )

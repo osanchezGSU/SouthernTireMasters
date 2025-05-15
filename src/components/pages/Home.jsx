@@ -15,15 +15,15 @@ import ClosestLocationComponent from "../ClosestLocationComponent";
 import LocationComponent from "../LocationComponent";
 import { LoadScript } from '@react-google-maps/api';
 import BenefitsCardContainer from "../BenfitsCardContainer";
+import ServiceToggleComponent from "../ServiceToggleComponent";
 
 function Home () {
     //  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    const optionA = {value: servicesLinks.tireServiceLinks, label: "Tire Services"}
-    const optionB = {value: servicesLinks.automotiveServiceLinks, label: "Automotive Services"}
+  
 
     const responsiveSize = 1024;
     const [selectedSearchBy, setSelectedSearchBy] = useState(null);
-    const [selectedToggleOption, setSelectedToggleOption] = useState(optionA);
+   
     const [location, setLocation] = useState({ lat: null, lng: null });
     const [error, setError] = useState(null);
 
@@ -122,19 +122,7 @@ function Home () {
             </section>
             <section className="services">
                 <SectionTitle name = "Expert Tire & Auto Services"></SectionTitle>
-                <div className="toggle-container">
-                    <div onClick={() => (setSelectedToggleOption(optionA), console.log(selectedToggleOption))} className={`toggle-button ${selectedToggleOption.value === optionA.value ? "active" : ""}`} >
-                        <span>{optionA.label}</span>
-                    </div>
-                    <div onClick={() => (setSelectedToggleOption(optionB), console.log(selectedToggleOption))} className={`toggle-button ${selectedToggleOption.value === optionB.value ? "active" : ""}`} >
-                        <span>{optionB.label}</span>
-                    </div>
-                </div>
-                {isMobile ? (
-                    <ServiceCardContainer serviceType= {selectedToggleOption.value}/>
-                ) : (
-                    <ServiceCardGrid serviceType={selectedToggleOption.value} />
-                )}
+                <ServiceToggleComponent isMobile={isMobile}/>
 
             </section>
             <section className="location-section">
