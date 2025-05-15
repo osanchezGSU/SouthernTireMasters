@@ -27,7 +27,7 @@ function TireConnectWidget() {
     };
   }, []);
 
-  return <div id="tireconnect" ref={containerRef}></div>;
+  return <div id="tireconnect" ref={containerRef} className='tireconnect'></div>;
 }
 
 export default TireConnectWidget;

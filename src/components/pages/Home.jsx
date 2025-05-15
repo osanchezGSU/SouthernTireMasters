@@ -136,7 +136,6 @@ function Home () {
                     <ServiceCardGrid serviceType={selectedToggleOption.value} />
                 )}
 
-
             </section>
             <section className="location-section">
                 <LoadScript googleMapsApiKey="AIzaSyCF_5qaMWKf4LyZfYA14lLxy_vG14JIDJE" >

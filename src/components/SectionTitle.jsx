@@ -1,8 +1,8 @@
 import React from "react";
 
-function SectionTitle (props) {
+function SectionTitle ({name}) {
     return (
-        <h3 className="regular-weight secondary section-title">{props.name}</h3>
+        <h3 className="regular-weight secondary section-title">{name}</h3>
     )
 }
 

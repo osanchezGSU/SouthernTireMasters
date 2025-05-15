@@ -318,6 +318,12 @@ p.isOpen-label.closed{
 .benefit-card h2{
   text-align: center;
 }
+.tireconnect{
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+
 
 
 /* Tablets */
