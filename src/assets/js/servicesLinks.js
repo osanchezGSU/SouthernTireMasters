@@ -26,7 +26,7 @@ const tireServiceLinks = [
   const automotiveServiceLinks = [
     { id : 1 , paraName: "wheel-alignments", name: 'Wheel Alignments', url: "/services/wheel-alignments", description: "Improve handling and extend tire life with precise wheel alignment.", img: wheelAlignmentImg },
     { id : 2 , paraName: "suspension-check", name: 'Suspension Check', url: "/services/suspension-check", description: "Ensure a smooth ride and optimal control with a thorough suspension check.", img: suspensionCheckImg },
-    { id : 3 , paraName: "brake", name: 'Brake Check', url: "/services/brake-check", description: "Improve responsiveness and extend brake life with regular inspections.", img: brakeCheckImg},
+    { id : 3 , paraName: "brake-check", name: 'Brake Check', url: "/services/brake-check", description: "Improve responsiveness and extend brake life with regular inspections.", img: brakeCheckImg},
     { id : 4 , paraName: "lift-lower-kits", name: 'Lift/Lower Kits', url: "/services/lift-lower-kits", description: "Get the head-turning look you want with expert lift or lowering services.", img: liftKitImg },
     { id : 5 , paraName: "oil-change", name: 'Oil Change', url: "/services/oil-change", description: "Keep your engine running smoothly with a quick and efficient oil change.", img: oilChangeImg }
   ];
