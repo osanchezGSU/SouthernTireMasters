@@ -1,0 +1,4 @@
+@import './Variables.css';
+footer{
+    background-color: var(--light-gray);
+}
