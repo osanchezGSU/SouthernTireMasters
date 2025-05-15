@@ -1,6 +1,5 @@
 {
   "name": "southerntiremasters",
-  "homepage": "https://osanchezgsu.github.io/SouthernTireMasters/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+   
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
