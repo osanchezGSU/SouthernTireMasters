@@ -7,6 +7,7 @@ import useResponsive from "../hooks/useResponsive";
 
 function Services () {
    const isMobile = useResponsive();
+   
 
     return(
         <>
