@@ -5,7 +5,8 @@ import services from '../../assets/js/servicesLinks'
 import ImageHero from "../ImageHero";
 import DescriptionHero from "../DescriptionHero";
 import useResponsive from "../hooks/useResponsive";
-
+import SectionTitle from '../SectionTitle';
+import FAQComponent from '../FAQComponent';
 
 function ServicePage()  {
     const isMobile = useResponsive();
@@ -39,6 +40,14 @@ function ServicePage()  {
                     </div>
                 </section>
             )}
+           <section className="faq-section">
+                <SectionTitle name={`${service.name} FAQ`}/>
+                <div className="faq-list-container"> 
+                    {service.faqs.map((faq) => (
+                        <FAQComponent question={faq.question} answer={faq.answer}/>
+                    ))}
+                </div>
+           </section>
         </div>
     )
 }
