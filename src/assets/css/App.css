@@ -337,7 +337,7 @@ div.first-section h1{
   right: 16px;
 }
 .financing-img{
-  margin-top: 10vh;
+ 
   height: 45vh;
   width: 100%;
 }
@@ -396,6 +396,28 @@ div.first-section h1{
   font-size: 20px;
   width: 20px;
 }
+.finance-hero-content{
+  padding: 20px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+.finance-hero-content h1 > span{
+  color: #6BC3E7;
+  font-size: 36px;
+}
+.finance-hero-content .button{
+  background-color: #6BC3E7;
+  border: none;
+  box-shadow: none;
+  margin-top: 10px;
+}
+.finance-hero{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
 
 
 
@@ -427,12 +449,12 @@ div.first-section h1{
   }
 
   .financing-img{
-    margin-top: 15vh;
-    width: 100%;
-    height: 85vh;
+    height: 50vh;
     justify-self: center;
 }
-
+.finance-hero{
+  margin-top: 15vh;
+}
 
 
 
@@ -599,7 +621,17 @@ div.first-section h1{
 div.first-section > h1{
   right: 100px
 }
-
+.finance-hero{
+  margin-top: 15vh;
+  flex-direction: row;
+  gap: 50px
+}
+.finance-hero-content {
+  width: 100%;
+  justify-content: center;
+  padding: 50px;
+  gap: 50px
+}
   
  
    
