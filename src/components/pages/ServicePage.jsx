@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 import HelmetComponent from "../HelmetComponent";
 import services from '../../assets/js/servicesLinks'
-import FirstSection from "../FirstSection";
-import ServiceDescriptionHero from "../ServiceDescriptionHero";
+import ImageHero from "../ImageHero";
+import DescriptionHero from "../DescriptionHero";
 import useResponsive from "../hooks/useResponsive";
 
 
@@ -24,9 +24,21 @@ function ServicePage()  {
                 title={service.name} 
                 description={`Southern Tire Masters ${service.name} page.`} 
             />
-            <FirstSection backgroundImage={service.img} title={service.name}/>
-            <ServiceDescriptionHero image={service.img} description={isMobile ? service.shortDescription : service.longDescription}/>
-            
+            {isMobile ? (
+                <div>
+                    <ImageHero backgroundImage={service.img} title={service.name}/>
+                    <section>
+                        <DescriptionHero  description={isMobile ? service.shortDescription : service.longDescription}/>
+                    </section>
+                </div>
+            ):(
+                <section className="first-section service-page">
+                    <div className="service-page-first-section">
+                        <DescriptionHero  description={isMobile ? service.shortDescription : service.longDescription}/>
+                        <ImageHero backgroundImage={service.img} title={service.name}/>                
+                    </div>
+                </section>
+            )}
         </div>
     )
 }

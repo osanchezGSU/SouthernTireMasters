@@ -45,6 +45,7 @@ h3{
 }
 p{
   font-size: 18px;
+  font-weight: var(--medium-weight);
 }
 .light-weight{
   font-weight: 300;
