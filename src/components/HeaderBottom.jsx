@@ -92,7 +92,7 @@ function HeaderBottom() {
                     {hoveredLink === "services" && <ServicesDropDown linkType = {hoveredLink} isActive = {isServiceDropDownMenuOpen}/>}
                </div>
                 <Link to="/locations">Locations</Link>
-                <Link to="/tips-guides">Tips & Guides</Link>
+                {/* <Link to="/tips-guides">Tips & Guides</Link> */}
                 <Link to="/financing">Financing</Link>
             </div>
             <div className="barsIcon" onClick={toggleMenu}>
