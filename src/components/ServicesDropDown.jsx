@@ -2,6 +2,7 @@ import React from "react";
 import links from '../assets/js/servicesLinks'
 import { IoIosArrowForward } from "react-icons/io";
 import {Link} from 'react-router-dom'
+import {preloadServicePage} from '../routes'
 
 function ServicesDropDown(props){
     function createDropDown(link){
@@ -20,7 +21,7 @@ function ServicesDropDown(props){
         <div className="dropDownMenu">
             <span>Tire Services</span>
             {links.tireServiceLinks.map(createDropDown)}
-            <Link to="/services" className="link"> 
+            <Link to="/services" className="link" onMouseEnter={preloadServicePage} onTouchStart={preloadServicePage}> 
                             <span>View All</span>
                             <IoIosArrowForward />  
             </Link>
@@ -28,7 +29,7 @@ function ServicesDropDown(props){
         <div className="dropDownMenu">
             <span>Automotive Services</span>
             {links.automotiveServiceLinks.map(createDropDown)}
-            <Link to="/services" className="link"> 
+            <Link to="/services" className="link" onMouseEnter={preloadServicePage} onTouchStart={preloadServicePage}> 
                             <span>View All</span>
                             <IoIosArrowForward />  
             </Link>

@@ -2,6 +2,7 @@ import React from "react";
 import HelmetComponent from "../HelmetComponent";
 import ImageHero from "../ImageHero";
 import backgroundImage from "../../assets/img/financeImage.jpg"
+
 function Financing () {
     return(
         <>

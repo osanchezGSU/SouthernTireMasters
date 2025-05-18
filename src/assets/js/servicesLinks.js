@@ -295,7 +295,7 @@ const tireServiceLinks = [
       img: liftKitImg,
       shortDescription: "Get the stance or off-road clearance you want with our lift or lowering kit services. We install high-quality kits and include alignment and safety checks to keep your ride smooth and compliant.",
       longDescription: "Transform the look and performance of your vehicle with our expert lift or lowering kit services. We offer professional installation of high-quality kits tailored to your vehicle and driving style—whether you're aiming for better off-road capability or a sleek, aggressive stance. Each installation includes an alignment check and detailed safety inspection. Our team ensures the modifications maintain ride comfort, handling, and regulatory compliance",
-      faws: [
+      faqs: [
         {
           question: "Do you install kits I purchase elsewhere?",
           answer: "Yes, but we’ll need to inspect them before installation."

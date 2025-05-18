@@ -7,6 +7,12 @@ import DropDownWindow from "./DropDownWindow";
 import ServicesDropDown from "./ServicesDropDown";
 import { MdClose } from "react-icons/md";
 import { RxCaretUp } from "react-icons/rx";
+import {
+  preloadShopTires,
+  preloadFinancing,
+  preloadLocations,
+  preloadServices
+} from '../routes'
 
 
 function HeaderBottom() {
@@ -74,7 +80,7 @@ function HeaderBottom() {
                     toggleDropDownMenu();
                     setHoveredLink("shopTires");
                     } : undefined}>
-                        <Link to="/shop-tires" className="nav_drop_down_link" > 
+                        <Link to="/shop-tires" className="nav_drop_down_link" onMouseEnter={preloadShopTires}  onTouchStart={preloadShopTires} > 
                             <span>Shop Tires</span>  
                         </Link>
                         {isDropDownMenuOpen ?  <RxCaretUp style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}}/> : <RxCaretDown  style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}} />  }  
@@ -84,16 +90,16 @@ function HeaderBottom() {
                <div onMouseEnter={()=> setHoveredLink("services")}
                     onMouseLeave={()=> setHoveredLink(null)} className={`dropDownContainer ${isOpen && 'active'}`}>
                     <div className="dropDownContainerContent" onClick= {isOpen ? () => {toggleServiceDropDownMenu() ; setHoveredLink("services")} : undefined }>
-                        <Link to="/services" className="nav_drop_down_link"> 
+                        <Link to="/services" className="nav_drop_down_link" onMouseEnter={preloadServices}  onTouchStart={preloadServices} > 
                             <span>Services</span>  
                         </Link>
                         {isServiceDropDownMenuOpen ?  <RxCaretUp style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}}/> : <RxCaretDown  style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}} />  }  
                     </div>
                     {hoveredLink === "services" && <ServicesDropDown linkType = {hoveredLink} isActive = {isServiceDropDownMenuOpen}/>}
                </div>
-                <Link to="/locations">Locations</Link>
+                <Link to="/locations" onMouseEnter={preloadLocations}  onTouchStart={preloadLocations} >Locations</Link>
                 {/* <Link to="/tips-guides">Tips & Guides</Link> */}
-                <Link to="/financing">Financing</Link>
+                <Link to="/financing" onMouseEnter={preloadFinancing}  onTouchStart={preloadFinancing} >Financing</Link>
             </div>
             <div className="barsIcon" onClick={toggleMenu}>
             {isOpen ? <MdClose style={{ fontSize: '26px', }}/> : <FaBars  style={{ fontSize: '26px', }}/>}
