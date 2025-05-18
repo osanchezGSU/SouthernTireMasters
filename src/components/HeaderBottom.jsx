@@ -80,26 +80,56 @@ function HeaderBottom() {
                     toggleDropDownMenu();
                     setHoveredLink("shopTires");
                     } : undefined}>
-                        <Link to="/shop-tires" className="nav_drop_down_link" onMouseEnter={preloadShopTires}  onTouchStart={preloadShopTires} > 
+                        <Link to="/shop-tires" className="nav_drop_down_link" onMouseEnter={preloadShopTires}  onTouchStart={preloadShopTires} onClick={() => {
+                   setIsOpen(false);
+            setIsDropDownMenuOpen(false);
+            setIsServiceDropDownMenuOpen(false);
+            setHoveredLink(null);
+            }}> 
                             <span>Shop Tires</span>  
                         </Link>
                         {isDropDownMenuOpen ?  <RxCaretUp style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}}/> : <RxCaretDown  style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}} />  }  
                     </div>
-                    {hoveredLink === "shopTires" && <DropDownWindow linkType = {hoveredLink} isActive = {isDropDownMenuOpen} />}
+                    {hoveredLink === "shopTires" && <DropDownWindow linkType = {hoveredLink} isActive = {isDropDownMenuOpen} onLinkClick={() => {
+    setIsOpen(false);
+    setIsDropDownMenuOpen(false);
+    setIsServiceDropDownMenuOpen(false);
+    setHoveredLink(null);
+  }}/>}
                 </div>
                <div onMouseEnter={()=> setHoveredLink("services")}
                     onMouseLeave={()=> setHoveredLink(null)} className={`dropDownContainer ${isOpen && 'active'}`}>
                     <div className="dropDownContainerContent" onClick= {isOpen ? () => {toggleServiceDropDownMenu() ; setHoveredLink("services")} : undefined }>
-                        <Link to="/services" className="nav_drop_down_link" onMouseEnter={preloadServices}  onTouchStart={preloadServices} > 
+                        <Link to="/services" className="nav_drop_down_link" onMouseEnter={preloadServices}  onTouchStart={preloadServices} onClick={() => {
+                   setIsOpen(false);
+            setIsDropDownMenuOpen(false);
+            setIsServiceDropDownMenuOpen(false);
+            setHoveredLink(null);
+            }}> 
                             <span>Services</span>  
                         </Link>
                         {isServiceDropDownMenuOpen ?  <RxCaretUp style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}}/> : <RxCaretDown  style={{ fontSize: '24px', marginLeft: '2px', strokeWidth: "1"}} />  }  
                     </div>
-                    {hoveredLink === "services" && <ServicesDropDown linkType = {hoveredLink} isActive = {isServiceDropDownMenuOpen}/>}
+                    {hoveredLink === "services" && <ServicesDropDown linkType = {hoveredLink} isActive = {isServiceDropDownMenuOpen} onLinkClick={() => {
+    setIsOpen(false);
+    setIsDropDownMenuOpen(false);
+    setIsServiceDropDownMenuOpen(false);
+    setHoveredLink(null);
+  }}/>}
                </div>
-                <Link to="/locations" onMouseEnter={preloadLocations}  onTouchStart={preloadLocations} >Locations</Link>
+                <Link to="/locations" onMouseEnter={preloadLocations}  onTouchStart={preloadLocations} onClick={() => {
+                   setIsOpen(false);
+            setIsDropDownMenuOpen(false);
+            setIsServiceDropDownMenuOpen(false);
+            setHoveredLink(null);
+            }}>Locations</Link>
                 {/* <Link to="/tips-guides">Tips & Guides</Link> */}
-                <Link to="/financing" onMouseEnter={preloadFinancing}  onTouchStart={preloadFinancing} >Financing</Link>
+                <Link to="/financing" onMouseEnter={preloadFinancing}  onTouchStart={preloadFinancing} onClick={() => {
+                   setIsOpen(false);
+            setIsDropDownMenuOpen(false);
+            setIsServiceDropDownMenuOpen(false);
+            setHoveredLink(null);
+            }}>Financing</Link>
             </div>
             <div className="barsIcon" onClick={toggleMenu}>
             {isOpen ? <MdClose style={{ fontSize: '26px', }}/> : <FaBars  style={{ fontSize: '26px', }}/>}
