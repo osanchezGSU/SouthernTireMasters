@@ -60,7 +60,7 @@ function Home () {
             <section className="landing-hero first-section">
                 <div className="landing-hero-content flex column">
                     <div className="flex landing-hero-header">
-                        <IoStarSharp />
+                        <IoStarSharp className="starIcon" />
                         <IoStarSharp className="starIcon" />
                         <IoStarSharp className="starIcon" />
                         <IoStarSharp className="starIcon" />
