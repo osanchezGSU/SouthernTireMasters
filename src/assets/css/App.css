@@ -418,10 +418,68 @@ div.first-section h1{
   flex-direction: column;
   margin-top: 10vh;
 }
+.reviews-section > *{
+  grid-column:  1 / -1;
+}
+.reviews-section > h3{
+  text-align: center;
+}
+.google-review-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+.google-review-container-header{
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 5px;
+}
+.google-review-container  svg {
+  font-size: 50px;
+}
+.google-review-container span{
+  font-size: 14px;
+  color: var(--gray);
+}
+.review-card{
+  padding:10px 30px;
+  box-shadow: 2px 2px 3px hsla(0, 0%, 0%, .15);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.review-card > p {
+  height: 200px;
+  overflow-y: scroll;
+}
+.star-container{
+  display: flex;
+  gap: 2px;
 
+}
+.star-container svg{
+  font-size: 14px;
+}
+.review-card-footer{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.review-card-footer > div{
+  display: flex;
+  flex-direction: column;
+}
 
-
-
+.benefit-section > h3{
+  text-align: center;
+}
 
 
 /* Tablets */
@@ -455,6 +513,23 @@ div.first-section h1{
 .finance-hero{
   margin-top: 15vh;
 }
+.review-card > p {
+  overflow: inherit;
+}
+.benefit-section > h3, .reviews-section > h3{
+  text-align: left;
+}
+.google-review-container-header{
+  flex-direction: row;
+  justify-content: space-between;
+}
+.google-review-container-header > div{
+  display: flex;
+  gap: 5px;
+  text-align: left;
+
+}
+
 
 
 

@@ -13,6 +13,7 @@ import { LoadScript } from '@react-google-maps/api';
 import BenefitsCardContainer from "../BenfitsCardContainer";
 import ServiceToggleComponent from "../ServiceToggleComponent";
 import useResponsive from "../hooks/useResponsive";
+import GoogleReviewComponent from "../GoogleReviewComponent";
 
 function Home () {
     //  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -59,7 +60,7 @@ function Home () {
             <section className="landing-hero first-section">
                 <div className="landing-hero-content flex column">
                     <div className="flex landing-hero-header">
-                        <IoStarSharp className="starIcon" />
+                        <IoStarSharp />
                         <IoStarSharp className="starIcon" />
                         <IoStarSharp className="starIcon" />
                         <IoStarSharp className="starIcon" />
@@ -122,11 +123,14 @@ function Home () {
             {/* <section>
                 <SectionTitle name = "Testimonials"></SectionTitle>
             </section> */}
-            <section>
+            <section className="benefit-section">
                 <SectionTitle name = "Our Commitment to You"></SectionTitle>
                 <BenefitsCardContainer />
             </section>
-
+            <section className="reviews-section">
+                <SectionTitle name = "Hear From Our Happy Clients" />
+                <GoogleReviewComponent />
+            </section>
         </>
     )
 }
