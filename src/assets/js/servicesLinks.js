@@ -50,20 +50,20 @@ const tireServiceLinks = [
       longDescription: "Enhance your vehicle’s performance and appearance with our premium wheel purchase service. We carry a wide range of aftermarket wheels in various sizes, materials, finishes, and designs. Whether you're aiming for a stylish upgrade or a performance enhancement, our knowledgeable staff will help you select wheels that match your vehicle’s requirements and your personal style. Fitment is guaranteed, and we offer full installation and balancing services for all wheel purchases.",  
       faqs: [
         {
-          answer: "Do you carry aftermarket wheels?",
-          question: "Yes, we offer aftermarket wheels to match style, performance, and fitment preferences"
+          question: "Do you carry aftermarket wheels?",
+          answer: "Yes, we offer aftermarket wheels to match style, performance, and fitment preferences"
         },
         {
-          answer: "Can I change my wheel size?",
-          question: "Yes, but we recommend professional consultation to maintain proper fit and safety."
+          question: "Can I change my wheel size?",
+          answer: "Yes, but we recommend professional consultation to maintain proper fit and safety."
         },
         {
-          answer: "Do you offer wheel packages with tires included?",
-          question: "Absolutely—ask about our wheel-and-tire bundles for added savings."
+          question: "Do you offer wheel packages with tires included?",
+          answer: "Absolutely—ask about our wheel-and-tire bundles for added savings."
         },
         {
-          answer: "Do you install the wheels I purchase?",
-          question: "Yes, installation and balancing are available for all wheel purchases."
+          question: "Do you install the wheels I purchase?",
+          answer: "Yes, installation and balancing are available for all wheel purchases."
         },
       ]
     },
